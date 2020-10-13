@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/camera_previewview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/take_picture_button"
+            android:layout_width="@dimen/shutter_button_size"
+            android:layout_height="@dimen/shutter_button_size"
+            android:src="@drawable/ic_shutter"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/gallery_preview_imageview"
+            android:layout_width="@dimen/gallery_preview_size"
+            android:layout_height="@dimen/gallery_preview_size"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            app:layout_constraintStart_toEndOf="@+id/take_picture_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
