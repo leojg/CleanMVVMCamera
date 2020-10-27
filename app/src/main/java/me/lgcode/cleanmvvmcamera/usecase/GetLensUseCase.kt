@@ -1,11 +1,12 @@
 package me.lgcode.cleanmvvmcamera.usecase
 
 import androidx.camera.core.CameraSelector
+import me.lgcode.cleanmvvmcamera.manager.PreferencesManager
 
-class GetLensUseCase {
+class GetLensUseCase(val preferencesManager: PreferencesManager) {
 
     fun run(): Int {
-        return CameraSelector.LENS_FACING_BACK
+        return preferencesManager.getLensFacing()
     }
 
 }

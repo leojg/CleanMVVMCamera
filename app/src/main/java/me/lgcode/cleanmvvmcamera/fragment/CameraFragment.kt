@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import me.lgcode.cleanmvvmcamera.databinding.CameraFragmentBinding
 import me.lgcode.cleanmvvmcamera.manager.CameraProviderManager
+import me.lgcode.cleanmvvmcamera.manager.PreferencesManager
 import me.lgcode.cleanmvvmcamera.model.CameraProviderModel
 import me.lgcode.cleanmvvmcamera.usecase.*
 import me.lgcode.cleanmvvmcamera.viewmodel.CameraViewModel
@@ -25,7 +26,7 @@ class CameraFragment: Fragment() {
     lateinit var binding: CameraFragmentBinding
     val viewModel: CameraViewModel by viewModels {
 
-        val getLensUseCase = GetLensUseCase()
+        val getLensUseCase = GetLensUseCase(PreferencesManager(requireContext(), "testFile"))
         val executorManager = ExecutorManager()
 
         CameraViewModel.CameraViewModelFactory(
