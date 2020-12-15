@@ -10,15 +10,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import me.lgcode.cameracore.manager.IOManager
 import me.lgcode.cleanmvvmcamera.databinding.CameraFragmentBinding
 import me.lgcode.cleanmvvmcamera.manager.CameraProviderManager
-import me.lgcode.cleanmvvmcamera.manager.PreferencesManager
+import me.lgcode.cameracore.manager.PreferencesManager
+import me.lgcode.cameracore.usecase.*
 import me.lgcode.cleanmvvmcamera.model.CameraProviderModel
-import me.lgcode.cleanmvvmcamera.usecase.*
 import me.lgcode.cleanmvvmcamera.viewmodel.CameraViewModel
-import me.lgcode.testfeatures.cleanarch.usecase.StartExecutorUseCase
 import me.lgcode.testfeatures.cleanarch.util.ExecutorManager
-import me.lgcode.testfeatures.cleanarch.util.IOManager
 import me.lgcode.testfeatures.cleanarch.util.PermissionManager
 
 class CameraFragment: Fragment() {

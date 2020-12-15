@@ -1,16 +1,15 @@
-package me.lgcode.testfeatures.cleanarch.util
+package me.lgcode.cameracore.manager
 
 import android.content.Context
-import me.lgcode.cleanmvvmcamera.R
 import java.io.File
 import java.text.SimpleDateFormat
 
 class IOManager(val context: Context) {
 
     fun getOutputDirectory(): File {
-        //val appContext = context.applicationContext
+        //TODO: Move path to a config file
         val mediaDir = context.externalMediaDirs.firstOrNull()?.let {
-            File(it, context.resources.getString(R.string.app_name)).apply { mkdirs() }
+            File(it, "my_temp_path").apply { mkdirs() }
         }
         return if (mediaDir != null && mediaDir.exists()) mediaDir else context.filesDir
     }

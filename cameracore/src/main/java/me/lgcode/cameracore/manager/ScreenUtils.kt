@@ -1,4 +1,4 @@
-package me.lgcode.testfeatures.cleanarch.util
+package me.lgcode.cameracore.manager
 
 import android.util.DisplayMetrics
 import android.util.Log

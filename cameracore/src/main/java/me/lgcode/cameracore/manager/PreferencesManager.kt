@@ -1,4 +1,4 @@
-package me.lgcode.cleanmvvmcamera.manager
+package me.lgcode.cameracore.manager
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE

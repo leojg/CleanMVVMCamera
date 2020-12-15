@@ -1,4 +1,4 @@
-package me.lgcode.testfeatures.cleanarch.usecase
+package me.lgcode.cameracore.usecase
 
 import me.lgcode.testfeatures.cleanarch.util.ExecutorManager
 import java.util.concurrent.ExecutorService

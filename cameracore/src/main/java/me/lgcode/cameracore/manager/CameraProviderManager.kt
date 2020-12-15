@@ -6,7 +6,7 @@ import androidx.camera.core.ImageCapture
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import me.lgcode.cleanmvvmcamera.model.CameraProviderModel
-import me.lgcode.testfeatures.cleanarch.util.ScreenUtils
+import me.lgcode.cameracore.manager.ScreenUtils
 
 class CameraProviderManager(
     val context: Context

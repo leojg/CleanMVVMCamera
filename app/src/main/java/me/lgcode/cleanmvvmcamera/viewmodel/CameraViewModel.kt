@@ -11,11 +11,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import me.lgcode.cleanmvvmcamera.model.CameraProviderModel
-import me.lgcode.cleanmvvmcamera.usecase.GetLensUseCase
-import me.lgcode.cleanmvvmcamera.usecase.SetupCameraUseCase
-import me.lgcode.cleanmvvmcamera.usecase.StopExecutorUseCase
-import me.lgcode.cleanmvvmcamera.usecase.TakePictureUseCase
-import me.lgcode.testfeatures.cleanarch.usecase.StartExecutorUseCase
+import me.lgcode.cameracore.usecase.GetLensUseCase
+import me.lgcode.cameracore.usecase.SetupCameraUseCase
+import me.lgcode.cameracore.usecase.StopExecutorUseCase
+import me.lgcode.cameracore.usecase.TakePictureUseCase
+import me.lgcode.cameracore.usecase.StartExecutorUseCase
 import me.lgcode.testfeatures.cleanarch.util.PermissionManager
 
 class CameraViewModel(

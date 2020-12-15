@@ -1,4 +1,4 @@
-package me.lgcode.cleanmvvmcamera.usecase
+package me.lgcode.cameracore.usecase
 
 import android.net.Uri
 import android.util.Log
@@ -11,7 +11,7 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
-import me.lgcode.testfeatures.cleanarch.util.IOManager
+import me.lgcode.cameracore.manager.IOManager
 
 class TakePictureUseCase(
     val getLensUseCase: GetLensUseCase,

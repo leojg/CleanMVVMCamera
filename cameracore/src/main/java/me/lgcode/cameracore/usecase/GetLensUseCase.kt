@@ -1,7 +1,6 @@
-package me.lgcode.cleanmvvmcamera.usecase
+package me.lgcode.cameracore.usecase
 
-import androidx.camera.core.CameraSelector
-import me.lgcode.cleanmvvmcamera.manager.PreferencesManager
+import me.lgcode.cameracore.manager.PreferencesManager
 
 class GetLensUseCase(val preferencesManager: PreferencesManager) {
 

@@ -1,4 +1,4 @@
-package me.lgcode.cleanmvvmcamera.usecase
+package me.lgcode.cameracore.usecase
 
 import android.view.Display
 import me.lgcode.cleanmvvmcamera.manager.CameraProviderManager

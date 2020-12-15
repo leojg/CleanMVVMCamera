@@ -1,4 +1,4 @@
-package me.lgcode.cleanmvvmcamera.usecase
+package me.lgcode.cameracore.usecase
 
 import me.lgcode.testfeatures.cleanarch.util.ExecutorManager
 
