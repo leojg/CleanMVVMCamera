@@ -10,33 +10,22 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import dagger.hilt.android.AndroidEntryPoint
 import me.lgcode.cameracore.manager.IOManager
 import me.lgcode.cleanmvvmcamera.databinding.CameraFragmentBinding
-import me.lgcode.cleanmvvmcamera.manager.CameraProviderManager
+import me.lgcode.cameracore.manager.CameraProviderManager
 import me.lgcode.cameracore.manager.PreferencesManager
 import me.lgcode.cameracore.usecase.*
 import me.lgcode.cleanmvvmcamera.model.CameraProviderModel
 import me.lgcode.cleanmvvmcamera.viewmodel.CameraViewModel
-import me.lgcode.testfeatures.cleanarch.util.ExecutorManager
-import me.lgcode.testfeatures.cleanarch.util.PermissionManager
+import me.lgcode.cameracore.manager.ExecutorManager
+import me.lgcode.cameracore.manager.PermissionManager
 
+@AndroidEntryPoint
 class CameraFragment: Fragment() {
 
     lateinit var binding: CameraFragmentBinding
-    val viewModel: CameraViewModel by viewModels {
-
-        val getLensUseCase = GetLensUseCase(PreferencesManager(requireContext(), "testFile"))
-        val executorManager = ExecutorManager()
-
-        CameraViewModel.CameraViewModelFactory(
-            SetupCameraUseCase(CameraProviderManager(requireContext()), getLensUseCase),
-            TakePictureUseCase(getLensUseCase, GetExecutorUseCase(executorManager), IOManager(requireActivity().applicationContext)),
-            getLensUseCase,
-            PermissionManager(requireActivity()),
-            StartExecutorUseCase(executorManager),
-            StopExecutorUseCase(executorManager)
-        )
-    }
+    val viewModel: CameraViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

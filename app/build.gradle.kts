@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     kotlin("android.extensions")
     kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -49,6 +50,14 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:${Versions.ANDROIDX_CONSTRAINT_LAYOUT_VERSION}")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.ANDROIDX_LIFECYCLE_KTS_VERSION}")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:${Versions.ANDROIDX_LIFECYCLE_KTS_VERSION}")
+
+    //Hilt
+    implementation("com.google.dagger:hilt-android:${Versions.HILT_VERSION}")
+    kapt("com.google.dagger:hilt-android-compiler:${Versions.HILT_VERSION}")
+
+    //Hilt ViewModel
+    implementation("androidx.hilt:hilt-lifecycle-viewmodel:${Versions.HILT_JETPACK_VERSION}")
+    kapt("androidx.hilt:hilt-compiler:${Versions.HILT_JETPACK_VERSION}")
 
     testImplementation("junit:junit:${Versions.JUNIT_VERSION}")
     androidTestImplementation("androidx.test.ext:junit:${Versions.ANDROIDX_JUNIT_VERSION}")

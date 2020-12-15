@@ -19,4 +19,8 @@ object Versions {
 
     const val CAMERAX_VERSION = "1.0.0-beta10"
     const val CAMERA_VIEW_VERSION = "1.0.0-alpha17"
+
+    const val HILT_VERSION = "2.28-alpha"
+    const val HILT_JETPACK_VERSION = "1.0.0-alpha02"
+
 }

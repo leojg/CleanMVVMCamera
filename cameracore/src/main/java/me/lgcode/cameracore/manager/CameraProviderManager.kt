@@ -1,4 +1,4 @@
-package me.lgcode.cleanmvvmcamera.manager
+package me.lgcode.cameracore.manager
 
 import android.content.Context
 import android.view.Display
@@ -7,8 +7,9 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import me.lgcode.cleanmvvmcamera.model.CameraProviderModel
 import me.lgcode.cameracore.manager.ScreenUtils
+import javax.inject.Inject
 
-class CameraProviderManager(
+class CameraProviderManager @Inject constructor(
     val context: Context
 ) {
 

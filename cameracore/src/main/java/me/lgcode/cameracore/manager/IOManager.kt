@@ -3,8 +3,9 @@ package me.lgcode.cameracore.manager
 import android.content.Context
 import java.io.File
 import java.text.SimpleDateFormat
+import javax.inject.Inject
 
-class IOManager(val context: Context) {
+class IOManager @Inject constructor(val context: Context) {
 
     fun getOutputDirectory(): File {
         //TODO: Move path to a config file

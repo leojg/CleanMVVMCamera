@@ -1,12 +1,12 @@
-package me.lgcode.testfeatures.cleanarch.util
+package me.lgcode.cameracore.manager
 
 import android.app.Activity
-import android.content.Context
 import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import javax.inject.Inject
 
-class PermissionManager(val activity: Activity) {
+class PermissionManager @Inject constructor(val activity: Activity) {
 
     fun checkPermissions(permissions: List<String>, requestCode: Int): Boolean {
         val missingPermissions = ArrayList<String>()

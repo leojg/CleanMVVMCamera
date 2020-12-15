@@ -5,10 +5,8 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.view.Display
 import androidx.camera.core.CameraSelector
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
+import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 import me.lgcode.cleanmvvmcamera.model.CameraProviderModel
 import me.lgcode.cameracore.usecase.GetLensUseCase
@@ -16,16 +14,16 @@ import me.lgcode.cameracore.usecase.SetupCameraUseCase
 import me.lgcode.cameracore.usecase.StopExecutorUseCase
 import me.lgcode.cameracore.usecase.TakePictureUseCase
 import me.lgcode.cameracore.usecase.StartExecutorUseCase
-import me.lgcode.testfeatures.cleanarch.util.PermissionManager
+import me.lgcode.cameracore.manager.PermissionManager
 
-class CameraViewModel(
+class CameraViewModel @ViewModelInject constructor(
     val setupCameraUseCase: SetupCameraUseCase,
     val takePictureUseCase: TakePictureUseCase,
     val getLensUseCase: GetLensUseCase,
     val permissionsManager: PermissionManager,
     val startExecutorUseCase: StartExecutorUseCase,
     val stopExecutorUseCase: StopExecutorUseCase
-): ViewModel() {
+): ViewModel(), LifecycleObserver {
 
     val cameraProviderModelLiveData = MutableLiveData<CameraProviderModel>()
     val pictureReadyLiveData = MutableLiveData<Uri?>()
@@ -82,24 +80,6 @@ class CameraViewModel(
 
     fun stopExecutor() {
         stopExecutorUseCase.run()
-    }
-
-    class CameraViewModelFactory(
-        val setupCameraUseCase: SetupCameraUseCase,
-        val takePictureUseCase: TakePictureUseCase,
-        val getLensUseCase: GetLensUseCase,
-        val permissionsManager: PermissionManager,
-        val startExecutorUseCase: StartExecutorUseCase,
-        val stopExecutorUseCase: StopExecutorUseCase
-    ): ViewModelProvider.Factory {
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T = CameraViewModel(
-            setupCameraUseCase,
-            takePictureUseCase,
-            getLensUseCase,
-            permissionsManager,
-            startExecutorUseCase,
-            stopExecutorUseCase
-        ) as T
     }
 
     companion object {

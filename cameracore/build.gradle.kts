@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     kotlin("android.extensions")
     kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -47,4 +48,8 @@ dependencies {
     api("androidx.camera:camera-camera2:${Versions.CAMERAX_VERSION}")
     api("androidx.camera:camera-lifecycle:${Versions.CAMERAX_VERSION}")
     api("androidx.camera:camera-view:${Versions.CAMERA_VIEW_VERSION}")
+
+    //Hilt
+    implementation("com.google.dagger:hilt-android:${Versions.HILT_VERSION}")
+    kapt("com.google.dagger:hilt-android-compiler:${Versions.HILT_VERSION}")
 }

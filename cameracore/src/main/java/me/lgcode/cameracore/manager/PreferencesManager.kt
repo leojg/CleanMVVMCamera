@@ -4,8 +4,9 @@ import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.util.Log
 import androidx.camera.core.CameraSelector
+import javax.inject.Inject
 
-class PreferencesManager(val context: Context, val prefFile: String) {
+class PreferencesManager @Inject constructor(val context: Context, val prefFile: String) {
 
     fun setLensFacing(value: Int) {
         try {

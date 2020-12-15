@@ -1,9 +1,10 @@
-package me.lgcode.testfeatures.cleanarch.util
+package me.lgcode.cameracore.manager
 
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+import javax.inject.Inject
 
-class ExecutorManager {
+class ExecutorManager @Inject constructor() {
 
     private lateinit var cameraExecutor: ExecutorService
 

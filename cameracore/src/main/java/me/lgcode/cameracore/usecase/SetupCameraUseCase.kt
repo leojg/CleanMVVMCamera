@@ -1,10 +1,11 @@
 package me.lgcode.cameracore.usecase
 
 import android.view.Display
-import me.lgcode.cleanmvvmcamera.manager.CameraProviderManager
+import me.lgcode.cameracore.manager.CameraProviderManager
 import me.lgcode.cleanmvvmcamera.model.CameraProviderModel
+import javax.inject.Inject
 
-class SetupCameraUseCase(
+class SetupCameraUseCase @Inject constructor(
     val cameraProvider: CameraProviderManager,
     val getLensUseCase: GetLensUseCase
 ) {

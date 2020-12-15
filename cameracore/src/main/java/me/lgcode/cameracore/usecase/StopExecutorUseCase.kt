@@ -1,8 +1,9 @@
 package me.lgcode.cameracore.usecase
 
-import me.lgcode.testfeatures.cleanarch.util.ExecutorManager
+import me.lgcode.cameracore.manager.ExecutorManager
+import javax.inject.Inject
 
-class StopExecutorUseCase(
+class StopExecutorUseCase @Inject constructor(
     val executorManager: ExecutorManager
 ) {
     fun run() {
